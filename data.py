@@ -201,4 +201,6 @@ results = scraper.scrape_all(keyword, num_pages=2)
 
 if keyword:
     df = pd.DataFrame(results, columns=("title", "price", "link", "source"))
-    st.dataframe(df, use_container_width=True)
+    st.dataframe(df, use_container_width=True, column_config={
+        "website": st.column_config.LinkColumn()
+    })
